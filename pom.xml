@@ -11,6 +11,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>plateform</artifactId>
+
+    <properties>
+        <start-class>com.euap.plateform.Bootstrap</start-class>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>com.euap</groupId>
