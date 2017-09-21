@@ -42,20 +42,42 @@
 </div>
 
 <div id="demo" data-options="region:'center'" class="layout ">
-    <div data-options="region:'north', height: '45' " style="padding-top: 5px;padding-left: 10px;background-color: #eef1f6;" >
+    <div  data-options="region:'north',height:'85'" >
+    <div style="padding-top: 5px;padding-left: 10px;background-color: #eef1f6;" >
         <!--<el-button type="success " @click="show()"><i class="fa fa-plus"></i>&nbsp;新增</el-button>-->
         <!--<el-button type="warning "><i class="fa fa-pencil"></i>&nbsp;修改</el-button>-->
         <!--<el-button type="danger "><i class="fa fa-minus"></i>&nbsp;删除</el-button>-->
         <!--&lt;!&ndash;<el-input placeholder="请输入内容" style="width:100px"></el-input>&ndash;&gt;-->
         <!--<el-button type="success " @click="search()"><i class="fa  fa-search"></i>&nbsp;查询</el-button>-->
-        <div style="display: inline-block">
+        <div>
+            <el-input  placeholder="请选择任务" style="width:200px" icon="search"></el-input>
+            <el-input  placeholder="请选择机构" style="width:200px" icon="search"></el-input>
+            <el-input  placeholder="请选择报表" style="width:200px" icon="search"></el-input>
+            <el-button type="primary">查询</el-button>
+            <el-button type="primary">高级查询</el-button>
+        </div>
+        <div style="margin-top: 5px">
+        <div style="display: inline-block;border-right: 2px solid;padding-right:5px;border-color: #d1dbe5;">
+
             <el-button type="primary">新增</el-button>
             <el-button type="primary">删除</el-button>
-            <el-form-item lable="任务">
-            <el-input  placeholder="请输入内容"></el-input>
-            </el-form-item>
-            <el-button type="primary">查询</el-button>
+            <el-button type="primary">提交</el-button>
+            <el-button type="primary">强制提交</el-button>
+            <el-button type="primary">导入</el-button>
+            <el-button type="primary">导出</el-button>
+            <el-dropdown>
+                <el-button type="primary">
+                    更多操作<i class="el-icon-caret-bottom el-icon--right"></i>
+                </el-button>
+                <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>计算</el-dropdown-item>
+                    <el-dropdown-item>汇总</el-dropdown-item>
+                    <el-dropdown-item>校验</el-dropdown-item>
+                </el-dropdown-menu>
+            </el-dropdown>
+
         </div>
+
         <div style="display: inline-block">
         <el-pagination
                 :current-page="currentPage"
@@ -65,8 +87,10 @@
                 :total="400">
         </el-pagination>
         </div>
+        </div>
     </div>
-    <div data-options="region:'center'">
+    </div>
+    <div data-options="region:'center'" >
         <el-table
                 :data="tableData3"
                 height="100%    "
