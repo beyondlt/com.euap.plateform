@@ -41,13 +41,30 @@
     </div>
 </div>
 
-<div id="demo" data-options="region:'center'" class="layout main-wrap">
-    <div data-options="region:'north', height: '45' " style="padding-top: 5px;padding-left: 10px">
-        <el-button type="success " @click="show()"><i class="fa fa-plus"></i>&nbsp;新增</el-button>
-        <el-button type="warning "><i class="fa fa-pencil"></i>&nbsp;修改</el-button>
-        <el-button type="danger "><i class="fa fa-minus"></i>&nbsp;删除</el-button>
-        <!--<el-input placeholder="请输入内容" style="width:100px"></el-input>-->
-        <el-button type="success " @click="search()"><i class="fa  fa-search"></i>&nbsp;查询</el-button>
+<div id="demo" data-options="region:'center'" class="layout ">
+    <div data-options="region:'north', height: '45' " style="padding-top: 5px;padding-left: 10px;background-color: #eef1f6;" >
+        <!--<el-button type="success " @click="show()"><i class="fa fa-plus"></i>&nbsp;新增</el-button>-->
+        <!--<el-button type="warning "><i class="fa fa-pencil"></i>&nbsp;修改</el-button>-->
+        <!--<el-button type="danger "><i class="fa fa-minus"></i>&nbsp;删除</el-button>-->
+        <!--&lt;!&ndash;<el-input placeholder="请输入内容" style="width:100px"></el-input>&ndash;&gt;-->
+        <!--<el-button type="success " @click="search()"><i class="fa  fa-search"></i>&nbsp;查询</el-button>-->
+        <div style="display: inline-block">
+            <el-button type="primary">新增</el-button>
+            <el-button type="primary">删除</el-button>
+            <el-form-item lable="任务">
+            <el-input  placeholder="请输入内容"></el-input>
+            </el-form-item>
+            <el-button type="primary">查询</el-button>
+        </div>
+        <div style="display: inline-block">
+        <el-pagination
+                :current-page="currentPage"
+                :page-sizes="[100, 200, 300, 400]"
+                :page-size="100"
+                layout="total, sizes, prev, pager, next, jumper"
+                :total="400">
+        </el-pagination>
+        </div>
     </div>
     <div data-options="region:'center'">
         <el-table
@@ -81,15 +98,7 @@
         </el-table>
 
     </div>
-    <div data-options="region:'south', height: '60px'">
-        <el-pagination
-                :current-page="currentPage"
-                :page-sizes="[100, 200, 300, 400]"
-                :page-size="100"
-                layout="total, sizes, prev, pager, next, jumper"
-                :total="400">
-        </el-pagination>
-    </div>
+
     <!--<div class="el-dialog__wrapper"-->
          <!--style="visibility:hidden;background-color: rgb(0, 0, 0);filter: alpha(opacity=20);  background-color: rgba(0, 0, 0, 0.2);  ">-->
         <!--<div class="box" style="width:600px;margin-top:100px;margin-left:200px;">-->
